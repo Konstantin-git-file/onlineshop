@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/online_shop_system_db
+#    ?sqlInit="SET search_path myshema"
+    username:
+    password:
+
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:db.changelog/db.changelog-master.yaml
+    database-change-log-lock-table: onlineshop_system_dbLOGLOCKTABLE
+    database-change-log-table: onlineshop_system_dbLOGTABLE
+    default-schema: onlineshop
+    enabled: true
+
+  logging:
+    level:
+      org:
+        springframework:
+          security: DEBUG
